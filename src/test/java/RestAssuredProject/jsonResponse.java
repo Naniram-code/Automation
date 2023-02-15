@@ -3,14 +3,12 @@ package RestAssuredProject;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static io.restassured.RestAssured.DEFAULT_PORT;
-import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
-import static org.testng.Assert.assertEquals;
 public class jsonResponse{
     //Global variable
  String BASE_URI ="http://localhost:3000";//local Host URL
@@ -18,12 +16,12 @@ public class jsonResponse{
     public void JasonResponseAssertion() {
 
         RestAssured.baseURI = BASE_URI;
-        Response response= RestAssured.given()
+        Response response= RestAssured.given()//Response interface/RestAssured class/given()Static method
                 .basePath("/store").contentType(ContentType.JSON)
                 .when().get();// extract  all the Body response of json in (response) variable.
 
         System.out.println(response.prettyPrint());//print all Body response in json pretty format(prettyPrint())
-
+         //Testng Assertion
         //response.jsonPath().get("book[3].title").toString();//object value to string value toString() M
         Assert.assertEquals(response.jsonPath().get("book[0].author").toString(),"Nigel Rees");
         Assert.assertEquals(response.jsonPath().get("book[3].title").toString(),"The Lord of the Rings");
@@ -42,6 +40,7 @@ public void JasonResponseV() {
                 .when().get()
 
                 .then()
+                .assertThat()
                 .statusCode(200)
                 .header("Content-Type",equalTo("application/json; charset=utf-8"))
                 .body("book[3].title",equalTo("The Lord of the Rings"))
@@ -59,12 +58,18 @@ public void JasonResponseV() {
         //using JSONObject class
         JSONObject jo=new JSONObject(response.asString()); //converting response to JSON Object
 
-        //print all titles of books
-		for(int i=0; i<jo.getJSONArray("book").length();i++)
+         //print all titles of books
+         JSONArray bookArray = jo.getJSONArray("book");
+         for (Object obj : bookArray) {
+             JSONObject book = (JSONObject) obj;
+             String bookTitle = book.getString("title");
+             System.out.println(bookTitle);
+         }
+        /* for(int i=0; i<jo.getJSONArray("book").length();i++)
 		{
 			String bookTitle=jo.getJSONArray("book").getJSONObject(i).get("title").toString();
 			System.out.println(bookTitle);
-		}
+		}*/
          Double totalPrice=0.0;
          for(int i=0; i<jo.getJSONArray("book").length();i++)
          {

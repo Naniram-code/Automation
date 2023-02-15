@@ -1,16 +1,14 @@
 package RestAssuredProject;
 
+import RestAssuredProject.AssignmentREstAssured.Auth;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.json.JSONObject;
 import org.testng.annotations.Test;
-
 import java.util.HashMap;
-
 import static org.hamcrest.Matchers.equalTo;
-
 public class Restful_bookerTest {
     //Global variable
     String BASE_URI = "https://restful-booker.herokuapp.com";
@@ -32,12 +30,9 @@ public class Restful_bookerTest {
         RestAssured.given().basePath("/ping")
                 //.auth().basic("admin", "password123")
                 .when().get()
-
                 .then()
                 .log().all()
                 .body(equalTo("Created"));
-
-
     }
 
     @Test(priority = 3)
@@ -125,9 +120,13 @@ public class Restful_bookerTest {
 
     @Test(priority=6)
     void CreateToken() {
+        Auth auth=new Auth();
+        auth.setUsername("admin");
+        auth.setPassword("password123");
         RestAssured.baseURI = BASE_URI;
         RestAssured.given().basePath("auth").headers("content-Type", "application/json")
-                .auth().basic("admin", "password123")
+                .auth().basic("Admin", "password123")
+                .body(auth)
                 .when().post()
                 .then()
                 .log().all().statusCode(200)
@@ -173,7 +172,7 @@ public class Restful_bookerTest {
     @Test(priority = 8)
     void testDelete() {
         RestAssured.baseURI = BASE_URI;
-        RestAssured.given().basePath("/booking/65").contentType(ContentType.JSON)
+        RestAssured.given().basePath("/booking/232").contentType(ContentType.JSON)
                 .header("Authorization","Basic YWRtaW46cGFzc3dvcmQxMjM=")
                 .auth().basic("admin", "password123")
                 .when().delete()

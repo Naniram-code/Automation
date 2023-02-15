@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome5",
+  "definitions": {
+    "Welcome5": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "bookingid": {
+          "type": "integer"
+        },
+        "booking": {
+          "$ref": "#/definitions/Booking"
+        }
+      },
+      "required": [
+        "booking",
+        "bookingid"
+      ],
+      "title": "Welcome5"
+    },
+    "Booking": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "firstname": {
+          "type": "string"
+        },
+        "lastname": {
+          "type": "string"
+        },
+        "totalprice": {
+          "type": "integer"
+        },
+        "depositpaid": {
+          "type": "boolean"
+        },
+        "bookingdates": {
+          "$ref": "#/definitions/Bookingdates"
+        },
+        "additionalneeds": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "additionalneeds",
+        "bookingdates",
+        "depositpaid",
+        "firstname",
+        "lastname",
+        "totalprice"
+      ],
+      "title": "Booking"
+    },
+    "Bookingdates": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "checkin": {
+          "type": "string",
+          "format": "date"
+        },
+        "checkout": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "checkin",
+        "checkout"
+      ],
+      "title": "Bookingdates"
+    }
+  }
+}
