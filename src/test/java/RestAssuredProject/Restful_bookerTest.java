@@ -148,7 +148,7 @@ public class Restful_bookerTest {
         jdata.put("additionalneeds", "Lunch");
 
         RestAssured.baseURI = BASE_URI;
-        RestAssured.given().basePath("/booking/1").cookie("token", "fd771e317011e1f")
+        RestAssured.given().basePath("/booking/123").cookie("token", "fd771e317011e1f")
                 .header("Authorization","Basic YWRtaW46cGFzc3dvcmQxMjM=")
                 .cookie("token", "fd771e317011e1f")
                 .contentType(ContentType.JSON)
@@ -172,7 +172,7 @@ public class Restful_bookerTest {
     @Test(priority = 8)
     void testDelete() {
         RestAssured.baseURI = BASE_URI;
-        RestAssured.given().basePath("/booking/232").contentType(ContentType.JSON)
+        RestAssured.given().basePath("/booking/323").contentType(ContentType.JSON)
                 .header("Authorization","Basic YWRtaW46cGFzc3dvcmQxMjM=")
                 .auth().basic("admin", "password123")
                 .when().delete()

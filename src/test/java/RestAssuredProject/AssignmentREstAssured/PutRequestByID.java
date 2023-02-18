@@ -46,7 +46,7 @@ public class PutRequestByID {
                     .body(jsonObj);
 
             Response response=requestSpecification.put();
-            validatableResponse = response.then();
+            validatableResponse = response.then(); //TestNg assertion
             validatableResponse.log().all().toString();
             Assert.assertEquals(response.jsonPath().get("firstname").toString(),"RamKumar");
             Assert.assertEquals(response.jsonPath().get("lastname").toString(),"Modhi");

@@ -26,12 +26,12 @@ public class Patchrequest {
                 .cookie("token", "fd771e317011e1f")
                 .contentType(ContentType.JSON)
                 .accept("application/json")
-                .body(jsonObj);
+                .body(jsonObj);//request details part
 
-        Response response=requestSpecification.patch();
-        validatableResponse = response.then()
-
+        Response response=requestSpecification.patch();// request  path method
+        validatableResponse = response.then()// response validation
                 .assertThat()
+
                 .statusCode(200)
                 .body("firstname",Matchers.equalTo("Suzana"))
                 .log().all();

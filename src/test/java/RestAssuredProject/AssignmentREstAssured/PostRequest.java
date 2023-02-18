@@ -1,5 +1,7 @@
 package RestAssuredProject.AssignmentREstAssured;
 
+
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.google.gson.Gson;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
@@ -7,12 +9,7 @@ import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import org.hamcrest.Matchers;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.Reader;
-
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
 public class PostRequest{
@@ -36,6 +33,9 @@ public class PostRequest{
 
         Gson gson=new Gson();
         String jsonObj=gson.toJson(booking);
+       /* ObjectMapper objMapper=new ObjectMapper();
+        String jsonObj=objMapper.writerWithDefaultPrettyPrinter().writeValueAsString(booking);
+        System.out.println(jsonObj);*/
 
         RequestSpecification requestSpecification = RestAssured.given();
         ValidatableResponse validatableResponse;
@@ -46,6 +46,7 @@ public class PostRequest{
                 .body(jsonObj);
 
                  Response response=requestSpecification.post();
+
                  validatableResponse = response.then();
 
                 validatableResponse.statusCode(200)
@@ -59,10 +60,12 @@ public class PostRequest{
                 .log().all().toString();
                 validatableResponse.time(Matchers.lessThan(400l));
 
+
+
         JsonPath extractor=response.jsonPath();//JsonPath assertion
-        if (extractor.get("bookingid").toString() != null) {
+       if (extractor.get("bookingid").toString() != null) {
             System.out.println("bookingId="+extractor.get("bookingid").toString());
-        }
+       }
 
 
 

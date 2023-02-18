@@ -6,6 +6,7 @@ import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import org.hamcrest.Matchers;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
 public class CreateToken {
@@ -19,19 +20,19 @@ public class CreateToken {
         ValidatableResponse validatableResponse;
         requestSpecification.baseUri(BASE_URI)
                  .basePath("/auth").headers("content-Type", "application/json")
-                .auth().basic("admin", "password123")
-                .body(auth)
-                .when().post()
-                .then()
-                .log().all().statusCode(200)
-                .header("Content-Type", equalTo("application/json; charset=utf-8"))
-                .assertThat()
-                .body("token", Matchers.notNullValue());
-        Response response=requestSpecification.post();
+                .body(auth);//request Details(1)
 
-        validatableResponse = response.then();
-        String ss= validatableResponse.extract().path("token");
-        System.out.println("Token="+ss);
+
+        Response response=requestSpecification.post();//post method(2)
+
+        validatableResponse = response.then(); //validation (3)
+                validatableResponse.statusCode(200)
+                .header("Content-Type", equalTo("application/json; charset=utf-8"))
+                .body("token",Matchers.notNullValue())
+                        .log().all();
+
+                String ss=response.jsonPath().get("token");
+                System.out.println("Token="+ss);
 
 
     }}
