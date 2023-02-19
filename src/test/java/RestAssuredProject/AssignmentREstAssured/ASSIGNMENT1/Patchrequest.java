@@ -1,5 +1,6 @@
-package RestAssuredProject.AssignmentREstAssured;
+package RestAssuredProject.AssignmentREstAssured.ASSIGNMENT1;
 
+import RestAssuredProject.AssignmentREstAssured.ASSIGNMENT1.Booking;
 import com.google.gson.Gson;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;

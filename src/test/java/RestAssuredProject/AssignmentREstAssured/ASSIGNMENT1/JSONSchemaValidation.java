@@ -1,5 +1,7 @@
-package RestAssuredProject.AssignmentREstAssured;
+package RestAssuredProject.AssignmentREstAssured.ASSIGNMENT1;
 
+import RestAssuredProject.AssignmentREstAssured.ASSIGNMENT1.Booking;
+import RestAssuredProject.AssignmentREstAssured.ASSIGNMENT1.BookingDate;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.google.gson.Gson;
 import io.restassured.RestAssured;
@@ -7,9 +9,8 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
-import org.hamcrest.Matchers;
 
-    public class JSONSchemaValidation {
+public class JSONSchemaValidation {
 
 
         public static void main(String[] args) throws JsonProcessingException {
@@ -38,10 +39,10 @@ import org.hamcrest.Matchers;
             requestSpecification.baseUri(BASE_URI)
                     .basePath("/booking").headers("content-Type", "application/json")
                     .auth().basic("admin", "password123")
-                    .body(jsonObj);
+                    .body(jsonObj);//request details
 
-            Response response=requestSpecification.post();
-            validatableResponse = response.then();
+            Response response=requestSpecification.post();//post method
+            validatableResponse = response.then();// response validation
             validatableResponse.statusCode(200)
                     .assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schema.json"))
                     .log().all().toString();

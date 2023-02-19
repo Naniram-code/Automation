@@ -1,5 +1,6 @@
-package RestAssuredProject.AssignmentREstAssured;
+package RestAssuredProject.AssignmentREstAssured.ASSIGNMENT1;
 
+import RestAssuredProject.AssignmentREstAssured.ASSIGNMENT1.Auth;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;

@@ -1,5 +1,4 @@
-package RestAssuredProject.AssignmentREstAssured;
-
+package RestAssuredProject.AssignmentREstAssured.ASSIGNMENT1;
 
 
 public class Booking {
@@ -7,7 +6,7 @@ public class Booking {
     private String lastname;
     private int totalprice;
     private boolean depositpaid;
-    private  BookingDate bookingdates;
+    private BookingDate bookingdates;
     private String additionalneeds;
     @Override
     public String toString() {

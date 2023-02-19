@@ -1,4 +1,4 @@
-package RestAssuredProject.AssignmentREstAssured;
+package RestAssuredProject.AssignmentREstAssured.ASSIGNMENT1;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;

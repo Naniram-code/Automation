@@ -1,5 +1,7 @@
-package RestAssuredProject.AssignmentREstAssured;
+package RestAssuredProject.AssignmentREstAssured.ASSIGNMENT1;
 
+import RestAssuredProject.AssignmentREstAssured.ASSIGNMENT1.Booking;
+import RestAssuredProject.AssignmentREstAssured.ASSIGNMENT1.BookingDate;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.google.gson.Gson;
 import io.restassured.RestAssured;
@@ -7,12 +9,10 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
-import org.hamcrest.Matchers;
 import org.testng.Assert;
 
-import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
+
 public class PutRequestByID {
     public static void main(String[] args) throws JsonProcessingException {
 

@@ -1,4 +1,4 @@
-package RestAssuredProject.AssignmentREstAssured;
+package RestAssuredProject.AssignmentREstAssured.ASSIGNMENT2;
 
 public class BookingDate {
     private String checkin;

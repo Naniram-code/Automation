@@ -1,10 +1,8 @@
 package RestAssuredProject;
 
-import RestAssuredProject.AssignmentREstAssured.Auth;
+import RestAssuredProject.AssignmentREstAssured.ASSIGNMENT1.Auth;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.specification.RequestSpecification;
-import io.restassured.specification.ResponseSpecification;
 import org.json.JSONObject;
 import org.testng.annotations.Test;
 import java.util.HashMap;
