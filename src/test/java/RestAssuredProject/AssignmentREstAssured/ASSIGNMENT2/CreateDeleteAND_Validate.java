@@ -10,8 +10,11 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
+import io.restassured.specification.ResponseSpecification;
+import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 
+import static io.restassured.RestAssured.responseSpecification;
 import static org.hamcrest.Matchers.equalTo;
 
 public class CreateDeleteAND_Validate {
@@ -50,36 +53,40 @@ public class CreateDeleteAND_Validate {
         validatableResponse.log().all();
 
         JsonPath extractor=response.jsonPath();//JsonPath assertion
-        BookingID=extractor.get("bookingid").toString();
-        System.out.println(BookingID);
+        BookingID=extractor.get("bookingid").toString();//get(key)--> o/p value=Store ID n. BookingID
+        System.out.println("Booking ID="+BookingID);
         }
         @Test(priority = 2)
     void DeleteRequest() {
-        String basePath = "booking/%s";//Modular operation basic java
-        RestAssured.baseURI = BASE_URI;
-        RestAssured.given()
-                .basePath(String.format(basePath, BookingID)).contentType(ContentType.JSON)
-                .header("Authorization", "Basic YWRtaW46cGFzc3dvcmQxMjM=")
-                .auth().basic("admin", "password123")
-                .when().delete()
-                .then()
-                .body(equalTo("Created"))
-                .statusCode(201)
-                .log().all();
+            String basePath = "booking/%s";//Modular operation basic java
+            RequestSpecification requestSpecification=RestAssured.given();
+            requestSpecification.baseUri(BASE_URI)
+                    .basePath(String.format(basePath, BookingID)).contentType(ContentType.JSON)
+                    .header("Authorization", "Basic YWRtaW46cGFzc3dvcmQxMjM=")
+                    .auth().basic("admin", "password123")
+                    .when().delete()
+                    .then()
+                    .body(equalTo("Created"))
+                    .statusCode(201)
+                    .log().all();
     }
     @Test(priority=3)
     void VarifyDeleteBookingByID() {
         String basePath = "booking/%s";
-        RestAssured.baseURI = BASE_URI;
-        RestAssured.given()
+        RequestSpecification requestSpecification = RestAssured.given();
+        ValidatableResponse validatableResponse;
+        requestSpecification.baseUri(BASE_URI)
                 .basePath(String.format(basePath, BookingID))
                 .headers("content-Type", "application/json")
-                .when().get()
-                .then()
-                .statusCode(404)
-                .body(equalTo("Not Found"))
-                .header("Content-Type", equalTo("text/plain; charset=utf-8"))
-                .log().all();
+                .auth().basic("admin", "password123");
+
+        Response response=requestSpecification.get();
+        validatableResponse = response.then();
+        validatableResponse.statusCode(404)
+                .body(Matchers.equalTo("Not Found"))
+                .log().all().toString();
+        System.out.println("Status of Booking ID  "+BookingID+"= "+response.body().prettyPrint());
+
 
     }
 }
