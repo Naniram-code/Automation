@@ -16,24 +16,19 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.responseSpecification;
 import static org.hamcrest.Matchers.equalTo;
-
 public class CreateDeleteAND_Validate {
     //Global Variable
-    String BookingID;
-    String BASE_URI = "https://restful-booker.herokuapp.com";
+    String BookingID;String BASE_URI = "https://restful-booker.herokuapp.com";
     @Test(priority = 1)
-
     void PostRequest(){
             Booking booking = new Booking();
             booking.setFirstname("Nani Ram");
             booking.setLastname("Bhujel");
             booking.setTotalprice(2343);
             booking.setDepositpaid(true);
-
             BookingDate bookingDate=new BookingDate();
             bookingDate.setCheckin("2023-02-15");
             bookingDate.setCheckout("2023-02-25");
-
             booking.setBookingdates(bookingDate);
             booking.setAdditionalneeds("lunch and dinner");
 
