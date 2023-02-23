@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test thread-count="5" verbose="2" preserve-order="true" name="Unit Test ">
-        <parameter name="Resfulbooker Testing" value="API" />
+    <test  verbose="2" preserve-order="true" name="Unit Test ">
+        <parameter name="Restful_booker Testing" value="API" />
     <groups>
         <run>
             <include name="Unit Test"/>
@@ -14,8 +14,8 @@
 
 
     </test> <!-- Test -->
-    <test verbose="2" preserve-order="true" name="Regrision Test">
-        <parameter name="Resfulbooker Testing" value="API" />
+    <test verbose="2" preserve-order="true" name="Regression Test">
+        <parameter name="Restfu_lbooker  Testing" value="API" />
         <groups>
             <run>
                 <include name="regression"/>
