@@ -37,7 +37,6 @@ public class Restful_bookerTest {
     void testPost() {
 
         HashMap data = new HashMap();
-
         data.put("firstname", "NaniRam");
         data.put("lastname", "Bhujel");
         data.put("totalprice", 1000);
@@ -143,17 +142,15 @@ public class Restful_bookerTest {
         jdata.put("additionalneeds", "Lunch");
 
         RestAssured.baseURI = BASE_URI;
-        RestAssured.given().basePath("/booking/111").cookie("token", "fd771e317011e1f")
+        RestAssured.given().basePath("/booking/165").cookie("token", "fd771e317011e1f")
                 .header("Authorization","Basic YWRtaW46cGFzc3dvcmQxMjM=")
                 .cookie("token", "fd771e317011e1f")
                 .contentType(ContentType.JSON)
                 .accept("application/json")
                 .body(jdata.toString())
                 .when().put()
-
                 .then()
                 .statusCode(200)
-
                 .body("firstname", equalTo("jack"))
                 .body("lastname", equalTo("MA"))
                 .body("totalprice", equalTo(1100))
@@ -167,16 +164,14 @@ public class Restful_bookerTest {
     @Test(priority = 8,groups = "regression")
     void testDelete() {
         RestAssured.baseURI = BASE_URI;
-        RestAssured.given().basePath("/booking/65").contentType(ContentType.JSON)
+        RestAssured.given().basePath("/booking/346").contentType(ContentType.JSON)
                 .header("Authorization","Basic YWRtaW46cGFzc3dvcmQxMjM=")
                 .auth().basic("admin", "password123")
                 .when().delete()
-
                 .then()
                 .statusCode(201)
                 .log().all();
     }
-
     @Test(priority = 9,groups = "regression")
     void testPartialUpdate() {
         HashMap data = new HashMap();

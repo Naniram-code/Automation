@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
+    <listeners>
+        <listener class-name="RestFullTestNgGrouping.DemoListener"></listener>
+    </listeners>
     <test  verbose="2" preserve-order="true" name="Unit Test ">
         <parameter name="Restful_booker Testing" value="API" />
     <groups>
         <run>
-            <include name="Unit Test"/>
+            <include name="Unit Test"/>                 <!--Test Name -->
         </run>
     </groups>
     <classes>
-        <class name="RestFullTestNgGrouping.Restful_bookerTest"/>
+        <class name="RestFullTestNgGrouping.Restful_bookerTest"/>   <!--Path class-->
     </classes>
-
 
     </test> <!-- Test -->
     <test verbose="2" preserve-order="true" name="Regression Test">
@@ -20,7 +22,6 @@
             <run>
                 <include name="regression"/>
                <!--<exclude name="Unit Test"/> -->
-
             </run>
         </groups>
         <classes>
