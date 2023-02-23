@@ -1,4 +1,4 @@
-package RestAssuredProject;
+package RestFullTestNgGrouping;
 
 import RestAssuredProject.AssignmentREstAssured.ASSIGNMENT1.Auth;
 import io.restassured.RestAssured;
@@ -11,7 +11,7 @@ public class Restful_bookerTest {
     //Global variable
     String BASE_URI = "https://restful-booker.herokuapp.com";
 
-    @Test(priority = 1)
+    @Test(priority = 1,groups = {"Unit Test","regression"})
     void getAllRequest() {
         RestAssured.baseURI = BASE_URI;
         RestAssured.given().basePath("/booking").headers("content-Type", "application/json")
@@ -19,7 +19,7 @@ public class Restful_bookerTest {
                 .then().log().all().statusCode(200);
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2,groups = "regression")
     void PingRequest() {
         RestAssured.baseURI = BASE_URI;
         //RequestSpecification r = RestAssured.given();//This line of code creates an instance of the
@@ -33,7 +33,7 @@ public class Restful_bookerTest {
                 .body(equalTo("Created"));
     }
 
-    @Test(priority = 3)
+    @Test(priority = 3,groups="Unit Test")
     void testPost() {
 
         HashMap data = new HashMap();
@@ -70,7 +70,7 @@ public class Restful_bookerTest {
                 .log().all();
     }
 
-    @Test(priority=4)
+    @Test(priority=4,groups = {"Unit Test","regression"})
     void testPostusingJsonLibrary() {
         JSONObject jdata = new JSONObject();
         jdata.put("firstname", "NNaniRam");
@@ -104,7 +104,7 @@ public class Restful_bookerTest {
     }
 
 
-    @Test(priority=5)
+    @Test(priority=5,groups = "regression")
     void filterByID() {
         RestAssured.baseURI = BASE_URI;
         RestAssured.given().basePath("booking/3").headers("content-Type", "application/json")
@@ -116,7 +116,7 @@ public class Restful_bookerTest {
 
     }
 
-    @Test(priority=6)
+    @Test(priority=6,groups = "Unit Test")
     void CreateToken() {
         Auth auth=new Auth();
         auth.setUsername("admin");
@@ -131,7 +131,7 @@ public class Restful_bookerTest {
                 .header("Content-Type", equalTo("application/json; charset=utf-8"));
     }
 
-    @Test(priority = 7)
+    @Test(priority = 7,groups = "regression")
     void PutRequest() {
 
         JSONObject jdata = new JSONObject();
@@ -146,7 +146,7 @@ public class Restful_bookerTest {
         jdata.put("additionalneeds", "Lunch");
 
         RestAssured.baseURI = BASE_URI;
-        RestAssured.given().basePath("/booking/123").cookie("token", "fd771e317011e1f")
+        RestAssured.given().basePath("/booking/111").cookie("token", "fd771e317011e1f")
                 .header("Authorization","Basic YWRtaW46cGFzc3dvcmQxMjM=")
                 .cookie("token", "fd771e317011e1f")
                 .contentType(ContentType.JSON)
@@ -167,10 +167,10 @@ public class Restful_bookerTest {
                 .log().all();
     }
 
-    @Test(priority = 8)
+    @Test(priority = 8,groups = "regression")
     void testDelete() {
         RestAssured.baseURI = BASE_URI;
-        RestAssured.given().basePath("/booking/323").contentType(ContentType.JSON)
+        RestAssured.given().basePath("/booking/768").contentType(ContentType.JSON)
                 .header("Authorization","Basic YWRtaW46cGFzc3dvcmQxMjM=")
                 .auth().basic("admin", "password123")
                 .when().delete()
@@ -180,7 +180,7 @@ public class Restful_bookerTest {
                 .log().all();
     }
 
-    @Test(priority = 9)
+    @Test(priority = 9,groups = "regression")
     void testPartialUpdate() {
         HashMap data = new HashMap();
         data.put("firstname", "jack");
@@ -201,7 +201,7 @@ public class Restful_bookerTest {
                 .statusCode(200)
                 .log().all();
     }
-    @Test(priority=10)
+    @Test(priority=10,groups = "regression")
     void filterByValidName() {//booking?firstname=Jim&lastname=Brown
         RestAssured.baseURI = BASE_URI;
         RestAssured.given()
