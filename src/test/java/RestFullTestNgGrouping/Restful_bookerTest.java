@@ -103,7 +103,13 @@ public class Restful_bookerTest {
     @Test(priority=5,groups = "regression")
     void filterByID() {
         RestAssured.baseURI = BASE_URI;
-        RestAssured.given().basePath("booking/3").headers("content-Type", "application/json")
+        String BookingId="3";
+        RestAssured.given()
+                .pathParam("mypath","booking")// mypath(variable) =user define variable and booking=path parameters (mypath=booking)
+                //.pathParam("bookingId","3")//bookingid(variable)=3(value) ---( option 1)
+                .pathParam("bookingId",BookingId)//bookingId(variable)=BookingId=3(Value)---(option 2)
+                .basePath("{mypath}/{bookingId}").//we used path parameters as variable here
+                headers("content-Type", "application/json")
                 .when().get()
                 .then()
                 .log().all().statusCode(200)
