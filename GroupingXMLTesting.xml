@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <listeners>
-        <listener class-name="RestFullTestNgGrouping.DemoListener"></listener>
+        <listener class-name="Tests.TestNG.RestFullTestNgGrouping.crud.DemoListener"></listener>
     </listeners>
     <test  verbose="2" preserve-order="true" name="Unit Test ">
         <parameter name="Restful_booker Testing" value="API" />
@@ -12,7 +12,7 @@
         </run>
     </groups>
     <classes>
-        <class name="RestFullTestNgGrouping.Restful_bookerTest"/>   <!--Path class-->
+        <class name="Tests.TestNG.RestFullTestNgGrouping.crud.Restful_bookerTest"/>   <!--Path class-->
     </classes>
 
     </test> <!-- Test -->
@@ -25,7 +25,7 @@
             </run>
         </groups>
         <classes>
-            <class name="RestFullTestNgGrouping.Restful_bookerTest"/>
+            <class name="Tests.TestNG.RestFullTestNgGrouping.crud.Restful_bookerTest"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

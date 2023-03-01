@@ -102,6 +102,17 @@
       <artifactId>poi</artifactId>
       <version>5.2.3</version>
     </dependency>
+    <dependency>
+      <groupId>com.codoid.products</groupId>
+      <artifactId>fillo</artifactId>
+      <version>1.22</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>5.2.3</version>
+    </dependency>
 
 
 
