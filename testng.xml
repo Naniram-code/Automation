@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="/Users/nanirambhujel/eclipse-workspace/ATBmaven">
+        <classes><class name="Testss.CreateBookingTest">
+            <methods><include name="testCreateBooking"/>
+            </methods></class><class name="Testss.TC_Integration1">
+            <methods><include name="testCreateBooking"/>
+                <include name="testCreateAndUpdateBooking"/>
+                <include name="testDeleteCreatedBooking"/>
+            </methods>
+        </class>
+        </classes>
+    </test>
+</suite>

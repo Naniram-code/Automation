@@ -12,7 +12,7 @@ public class PayloadManager {
     // JAVA -> JSON
     ObjectMapper objectMapper;
 
-    public String createPayload() throws JsonProcessingException {
+    public  String createPayload() throws JsonProcessingException {
         objectMapper = new ObjectMapper();
         Booking booking = new Booking();
         booking.setFirstname("Nani Ram");
