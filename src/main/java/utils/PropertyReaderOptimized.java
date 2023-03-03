@@ -20,7 +20,7 @@ public class PropertyReaderOptimized {
 
     static {
         try {
-            fileInputStream = new FileInputStream(new File(System.getProperty("user.dir") + "/src/test/resources/data.properties"));
+            fileInputStream = new FileInputStream(new File(System.getProperty("user.dir") + "/src/main/java/resourse/data.properties"));
             p = new Properties();
             p.load(fileInputStream);
             for (Object key : p.keySet()) {
