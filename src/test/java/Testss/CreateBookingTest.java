@@ -18,7 +18,7 @@ import org.testng.annotations.Test;
 public class CreateBookingTest extends BaseTest {
 
 
-    //private static final Logger log = LogManager.getLogger(CreateBookingTest.class);
+    private static final Logger log = LogManager.getLogger(CreateBookingTest.class);
 
 
     @Test
@@ -34,7 +34,7 @@ public class CreateBookingTest extends BaseTest {
         jsonPath = JsonPath.from(response.asString());
         System.out.println("Booking Id :" + jsonPath.getString("bookingid"));
         validatableResponse.statusCode(200);
-        //log.error("TestDone");
+        log.error("TestDone");
 
     }
 
