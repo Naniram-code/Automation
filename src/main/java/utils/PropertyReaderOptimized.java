@@ -16,6 +16,7 @@ public class PropertyReaderOptimized {
 
     static FileInputStream fileInputStream = null;
     static Properties p = null;
+    //this set of code  we can used any where as we need bcz we used static Map
     static Map<String, String> PROP_KEYS = new HashMap<>();
 
     static {

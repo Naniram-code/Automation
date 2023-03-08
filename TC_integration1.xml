@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="Testss.Listener"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="Integration1">
+        <classes>
+            <class name="Testss.TC_Integration1">
+            <methods>
+                <include name="testCreateBooking"/>
+                <include name="testCreateAndUpdateBooking"/>
+                <include name="testDeleteCreatedBooking"/>
+            </methods>
+        </class>
+        </classes>
+    </test>
+</suite>

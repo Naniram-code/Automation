@@ -13,7 +13,7 @@ public class PropertyReader {
     PropertyReader() {
 
     }
-
+     //read data.properties
     public static String readKey(String key) throws Exception {
         FileInputStream fileInputStream = null;
         Properties p = null;

@@ -54,7 +54,7 @@ public class PayloadManager {
 
         Gson gson=new Gson();
         String jsonObj=gson.toJson(booking);
-        //String jsonObj = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(booking);
+       // String jsonObj = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(booking);
         return jsonObj;
     }
 

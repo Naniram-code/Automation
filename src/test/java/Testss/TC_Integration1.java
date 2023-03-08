@@ -34,6 +34,9 @@ public class TC_Integration1 extends BaseTest {
         System.out.println("Booking Id :" + jsonPath.getString("bookingid"));
         validatableResponse.statusCode(200);
         iTestContext.setAttribute("bookingid", jsonPath.getString("bookingid"));
+        //iTestContext.setAttribute is a method in the TestNG testing framework,
+        // which allows users to set attributes on the test context
+        // bookingid variable assign value bookingid from json response
     }
 
 
@@ -42,10 +45,12 @@ public class TC_Integration1 extends BaseTest {
         token = getToken();
         String bookingId = (String) iTestContext.getAttribute("bookingid");
         System.out.println("Pramod - " + bookingId);
+
         requestSpecification.contentType(ContentType.JSON);
         requestSpecification.basePath(APIConstants.UPDATE_BOOKING + "/" + bookingId);
         Response response = RestAssured.given().spec(requestSpecification).cookie("token",token)
                 .when().body(payloadManager.updatedPayload()).put();
+
         ValidatableResponse validatableResponse = response.then().log().all();
         validatableResponse.body("firstname", Matchers.is("RamKumar"));
 
