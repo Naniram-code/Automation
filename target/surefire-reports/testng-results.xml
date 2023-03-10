@@ -2,82 +2,82 @@
 <testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-10T06:44:52 EST" name="Surefire suite" finished-at="2023-03-10T06:44:54 EST" duration-ms="1685">
+  <suite started-at="2023-03-10T06:59:47 EST" name="Surefire suite" finished-at="2023-03-10T06:59:49 EST" duration-ms="1727">
     <groups>
     </groups>
-    <test started-at="2023-03-10T06:44:52 EST" name="Surefire test" finished-at="2023-03-10T06:44:54 EST" duration-ms="1685">
+    <test started-at="2023-03-10T06:59:47 EST" name="Surefire test" finished-at="2023-03-10T06:59:49 EST" duration-ms="1727">
       <class name="Testss.CreateBookingTest">
-        <test-method is-config="true" signature="setUpConfig()[pri:0, instance:Testss.CreateBookingTest@1817f1eb]" started-at="2023-03-10T06:44:53 EST" name="setUpConfig" finished-at="2023-03-10T06:44:53 EST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUpConfig()[pri:0, instance:Testss.CreateBookingTest@767e20cf]" started-at="2023-03-10T06:59:48 EST" name="setUpConfig" finished-at="2023-03-10T06:59:48 EST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpConfig -->
-        <test-method signature="testCreateBooking()[pri:0, instance:Testss.CreateBookingTest@1817f1eb]" started-at="2023-03-10T06:44:53 EST" name="testCreateBooking" finished-at="2023-03-10T06:44:54 EST" duration-ms="308" status="PASS">
+        <test-method signature="testCreateBooking()[pri:0, instance:Testss.CreateBookingTest@767e20cf]" started-at="2023-03-10T06:59:48 EST" name="testCreateBooking" finished-at="2023-03-10T06:59:49 EST" duration-ms="310" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateBooking -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testss.CreateBookingTest@1817f1eb]" started-at="2023-03-10T06:44:54 EST" name="tearDown" finished-at="2023-03-10T06:44:54 EST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testss.CreateBookingTest@767e20cf]" started-at="2023-03-10T06:59:49 EST" name="tearDown" finished-at="2023-03-10T06:59:49 EST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- Testss.CreateBookingTest -->
       <class name="Testss.SmokeTest">
-        <test-method is-config="true" signature="setUpConfig()[pri:0, instance:Testss.SmokeTest@e4487af]" started-at="2023-03-10T06:44:52 EST" name="setUpConfig" finished-at="2023-03-10T06:44:52 EST" duration-ms="211" status="PASS">
+        <test-method is-config="true" signature="setUpConfig()[pri:0, instance:Testss.SmokeTest@6aaceffd]" started-at="2023-03-10T06:59:47 EST" name="setUpConfig" finished-at="2023-03-10T06:59:47 EST" duration-ms="195" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpConfig -->
-        <test-method signature="testCreatBook()[pri:0, instance:Testss.SmokeTest@e4487af]" started-at="2023-03-10T06:44:52 EST" name="testCreatBook" finished-at="2023-03-10T06:44:53 EST" duration-ms="585" status="PASS">
+        <test-method signature="testCreatBook()[pri:0, instance:Testss.SmokeTest@6aaceffd]" started-at="2023-03-10T06:59:47 EST" name="testCreatBook" finished-at="2023-03-10T06:59:48 EST" duration-ms="607" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreatBook -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testss.SmokeTest@e4487af]" started-at="2023-03-10T06:44:53 EST" name="tearDown" finished-at="2023-03-10T06:44:53 EST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testss.SmokeTest@6aaceffd]" started-at="2023-03-10T06:59:48 EST" name="tearDown" finished-at="2023-03-10T06:59:48 EST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUpConfig()[pri:0, instance:Testss.SmokeTest@e4487af]" started-at="2023-03-10T06:44:53 EST" name="setUpConfig" finished-at="2023-03-10T06:44:53 EST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUpConfig()[pri:0, instance:Testss.SmokeTest@6aaceffd]" started-at="2023-03-10T06:59:48 EST" name="setUpConfig" finished-at="2023-03-10T06:59:48 EST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpConfig -->
-        <test-method signature="testCreatBook()[pri:0, instance:Testss.SmokeTest@e4487af]" started-at="2023-03-10T06:44:53 EST" name="testCreatBook" finished-at="2023-03-10T06:44:53 EST" duration-ms="134" status="PASS">
+        <test-method signature="testCreatBook()[pri:0, instance:Testss.SmokeTest@6aaceffd]" started-at="2023-03-10T06:59:48 EST" name="testCreatBook" finished-at="2023-03-10T06:59:48 EST" duration-ms="135" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreatBook -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testss.SmokeTest@e4487af]" started-at="2023-03-10T06:44:53 EST" name="tearDown" finished-at="2023-03-10T06:44:53 EST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testss.SmokeTest@6aaceffd]" started-at="2023-03-10T06:59:48 EST" name="tearDown" finished-at="2023-03-10T06:59:48 EST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUpConfig()[pri:0, instance:Testss.SmokeTest@e4487af]" started-at="2023-03-10T06:44:53 EST" name="setUpConfig" finished-at="2023-03-10T06:44:53 EST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUpConfig()[pri:0, instance:Testss.SmokeTest@6aaceffd]" started-at="2023-03-10T06:59:48 EST" name="setUpConfig" finished-at="2023-03-10T06:59:48 EST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpConfig -->
-        <test-method signature="testCreatBook()[pri:0, instance:Testss.SmokeTest@e4487af]" started-at="2023-03-10T06:44:53 EST" name="testCreatBook" finished-at="2023-03-10T06:44:53 EST" duration-ms="135" status="PASS">
+        <test-method signature="testCreatBook()[pri:0, instance:Testss.SmokeTest@6aaceffd]" started-at="2023-03-10T06:59:48 EST" name="testCreatBook" finished-at="2023-03-10T06:59:48 EST" duration-ms="131" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreatBook -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testss.SmokeTest@e4487af]" started-at="2023-03-10T06:44:53 EST" name="tearDown" finished-at="2023-03-10T06:44:53 EST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testss.SmokeTest@6aaceffd]" started-at="2023-03-10T06:59:48 EST" name="tearDown" finished-at="2023-03-10T06:59:48 EST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUpConfig()[pri:0, instance:Testss.SmokeTest@e4487af]" started-at="2023-03-10T06:44:53 EST" name="setUpConfig" finished-at="2023-03-10T06:44:53 EST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUpConfig()[pri:0, instance:Testss.SmokeTest@6aaceffd]" started-at="2023-03-10T06:59:48 EST" name="setUpConfig" finished-at="2023-03-10T06:59:48 EST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpConfig -->
-        <test-method signature="testCreatBook()[pri:0, instance:Testss.SmokeTest@e4487af]" started-at="2023-03-10T06:44:53 EST" name="testCreatBook" finished-at="2023-03-10T06:44:53 EST" duration-ms="122" status="PASS">
+        <test-method signature="testCreatBook()[pri:0, instance:Testss.SmokeTest@6aaceffd]" started-at="2023-03-10T06:59:48 EST" name="testCreatBook" finished-at="2023-03-10T06:59:48 EST" duration-ms="141" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreatBook -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testss.SmokeTest@e4487af]" started-at="2023-03-10T06:44:53 EST" name="tearDown" finished-at="2023-03-10T06:44:53 EST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testss.SmokeTest@6aaceffd]" started-at="2023-03-10T06:59:48 EST" name="tearDown" finished-at="2023-03-10T06:59:48 EST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUpConfig()[pri:0, instance:Testss.SmokeTest@e4487af]" started-at="2023-03-10T06:44:53 EST" name="setUpConfig" finished-at="2023-03-10T06:44:53 EST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUpConfig()[pri:0, instance:Testss.SmokeTest@6aaceffd]" started-at="2023-03-10T06:59:48 EST" name="setUpConfig" finished-at="2023-03-10T06:59:48 EST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpConfig -->
-        <test-method signature="testCreatBook()[pri:0, instance:Testss.SmokeTest@e4487af]" started-at="2023-03-10T06:44:53 EST" name="testCreatBook" finished-at="2023-03-10T06:44:53 EST" duration-ms="138" status="PASS">
+        <test-method signature="testCreatBook()[pri:0, instance:Testss.SmokeTest@6aaceffd]" started-at="2023-03-10T06:59:48 EST" name="testCreatBook" finished-at="2023-03-10T06:59:48 EST" duration-ms="143" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreatBook -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testss.SmokeTest@e4487af]" started-at="2023-03-10T06:44:53 EST" name="tearDown" finished-at="2023-03-10T06:44:53 EST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testss.SmokeTest@6aaceffd]" started-at="2023-03-10T06:59:48 EST" name="tearDown" finished-at="2023-03-10T06:59:48 EST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
